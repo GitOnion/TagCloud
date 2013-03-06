@@ -1,4 +1,4 @@
 TagCloud
 ========
 
-A variety of tagcloud implementations
+A variety of tagcloud implementations in Python
