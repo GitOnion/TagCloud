@@ -15,10 +15,10 @@ def countWords (input):
   file.close()
 
 def printWords (outputFile, numSizes):
-  global myTagWords
+  global myWordCounts
   file = open(outputFile, 'w')
   result = startPage(numSizes)
-  for word,size in sorted(myTagWords):
+  for word,size in sorted(myWordCounts):
     result += formatWord(word, size)
   result += endPage()
   file.write(result)
