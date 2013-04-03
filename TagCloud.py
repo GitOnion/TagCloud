@@ -14,6 +14,9 @@ def countWords (input):
       myWordCounts[word] = myWordCounts.get(word, 0) + 1
   file.close()
 
+def sanitize (word):
+  return word.strip(string.digits + string.punctuation).lower()
+
 def printWords (outputFile, numSizes):
   global myWordCounts
   file = open(outputFile, 'w')
