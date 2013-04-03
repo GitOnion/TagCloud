@@ -14,6 +14,10 @@ def countWords (input):
       myWordCounts[word] = myWordCounts.get(word, 0) + 1
   file.close()
 
+def topWords (numWordsToKeep):
+  global myTagWords
+  myTagWords = sorted(myTagWords, key=operator.itemgetter(1), reverse=True)[0:numWordsToKeep]
+
 def printWords (outputFile, numSizes):
   global myWordCounts
   file = open(outputFile, 'w')
