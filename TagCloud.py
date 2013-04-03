@@ -1,5 +1,5 @@
 myCommonWords = []
-myWordCounts = {}
+myWordCounts = []
 
 def init (ignoreWords):
   file = open(ignoreWords, 'r')
