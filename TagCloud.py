@@ -1,5 +1,5 @@
 myCommonWords = []
-myWordCounts = {}
+myWordCounts = []
 
 def init (ignoreWords):
   file = open(ignoreWords, 'r')
@@ -23,6 +23,9 @@ def sizeWords (numSizes):
   numWordsPerSize = myTagWords[0][1] / numSizes
   for index,wordCount in enumerate(myTagWords):
     myTagWords[index] = (wordCount[0], wordCount[1] / numWordsPerSize)
+
+def sanitize (word):
+  return word.strip(string.digits + string.punctuation).lower()
 
 def printWords (outputFile, numSizes):
   global myWordCounts
