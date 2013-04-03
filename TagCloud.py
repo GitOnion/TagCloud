@@ -18,6 +18,12 @@ def topWords (numWordsToKeep):
   global myTagWords
   myTagWords = sorted(myTagWords, key=operator.itemgetter(1), reverse=True)[0:numWordsToKeep]
 
+def sizeWords (numSizes):
+  global myTagWords
+  numWordsPerSize = myTagWords[0][1] / numSizes
+  for index,wordCount in enumerate(myTagWords):
+    myTagWords[index] = (wordCount[0], wordCount[1] / numWordsPerSize)
+
 def printWords (outputFile, numSizes):
   global myWordCounts
   file = open(outputFile, 'w')
